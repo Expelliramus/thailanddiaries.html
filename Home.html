@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale= 1">
+  <title>Thailand Diaries</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!--Style-->
+  <style>
+  .topnav{
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 0 16px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  padding-right: 30px;
+  }
+  .topnav a{
+  height: auto;
+  position: relative;
+  background-color: white;
+  font-family: "roboto", sans-serif;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 12px;
+  text-decoration: none;
+  font-weight: 300;
+  }
+
+  .topnav .icon{
+  display: none;
+  }
+
+
+  .topnav a:hover:not(.active){
+  background-color: GoldenRod;
+  color: white;
+  }
+
+  .topnav a{
+  padding: 18px;
+  text-decoration: none;
+  color: black;
+  display: block;
+  }
+
+  .topnav a.active{
+  background-color: DarkGoldenRod;
+  color: white;
+  }
+
+  .active{
+  z-index=1;
+  }
+
+  .form {
+  all: unset;
+  position: absolute;
+  border-radius: 50px;
+  width: 40%;
+  border: solid 1px pink;
+  color: black;
+  font-family: "lato", sans-serif;
+  left: 30%;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  padding-right: 20px;
+  top: 50%;
+  }
+
+
+  input[type=search]{
+  all: unset;
+  width: 80%;
+  position: absolute;
+  }
+
+  ::placeholder{
+  color: gray;
+  }
+
+  .active{
+  background-color: darkgoldenrod;
+  color: white;
+  }
+
+  .sub{
+  all: unset;
+  float: right;
+  }
+
+  .body{
+  position: absolute;
+  font-family: "roboto", sans-serif;
+  left: 27%;
+  width: 50%;
+  background-color: white;
+  color: black;
+  padding-left: 3px;
+  padding-right: 3px;
+  }
+
+  .updates{
+  position: absolute;
+  width: 25%;
+  height: auto;
+  background-color: white;
+  color: black;
+  font-family: "roboto", sans-serif;
+  border-right: solid 3px grey;
+  padding-left: 5px;
+  padding-right: 5px;
+  }
+
+  .header{
+  font-family: "Cabin", sans-serif;
+  z-index: 1;
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  font-size: 250%;
+  font-weight: 700;
+  width: 100%;
+  background-color: transparent;
+  z-index: -1;
+  }
+  .norm{
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: auto;
+  }
+
+  .also{
+  left: 78%;
+  width: 21%;
+  height: auto;
+  background-color: white;
+  color: black;
+  position: absolute;
+  top: 100%;
+  font-family: "roboto", sans-serif;
+  padding-bottom: 5px;
+  padding-right: 3px;
+  padding-left: 5px;
+  padding-top: 10px;
+  border-left: solid 3px grey;
+  }
+
+  .mySlides{
+   display: none;
+   }
+  
+  .slideshow-container{
+   max-width: 1000px;
+   margin: auto;
+   position: relative;
+ }
+     
+  .prev, .next {
+   cursor: pointer;
+   position: absolute;
+   top: 50%
+   width: auto;
+   padding; 16px;
+   color: white;
+   font-weight: bold;
+   font-size: 18px;
+   transition: 0.6s ease;
+   border-radius: 0 3px 3px 0;
+   user-select: none;
+   }
+
+  .next {
+   right: 0;
+   border-radius: 3px 0 0 3px;
+   }
+
+  .prev:hover, .next:hover {
+   background-color: rgba(0,0,0,0.8);
+   }
+
+  .text {
+   color: white;
+   font-size: 15px;
+   padding: 8px 12px;
+   position: absolute;
+   bottom: 8px;
+   width: 100%;
+   text-align: center;
+   }
+
+  .numbertext {
+   color: white;
+   font-size: 15px;
+   padding: 8px 12px;
+   position: absolute;
+   top: 0;
+}
+ 
+  .dot {
+   cursor: pointer;
+   height: 15px;
+   width: 15px;
+   margin: 0 2px;
+   background-color: #bbb;
+   border-radius: 50%;
+   display: inline-block;
+   transition: background-color 0.6 ease;
+}
+
+  .active, .dot:hover {
+   background-color: #717171;
+}
+
+  .fade {
+   animation-name: fade;
+   animation-duration: 1.5s;
+}
+
+  @keyframes fade {
+   from{opacity: .4}
+   to{opacity: 1}
+}
+   
+  @media screen and (max-width:600px){
+  .updates{
+  width: 100%;
+  height: auto;
+  border-right: none;
+  border-bottom: solid 1px black;
+  }
+
+  .body, .updates, .also{
+  left: 0%;
+  position: relative;
+  width: 100%;
+  height: auto;
+  }
+  }
+  @media screen and (max-width:600px){
+  .topnav a:not(:first-child){
+  display: none;
+  }
+
+  .topnav.responsive{
+  position: relative;
+  }
+
+  .topnav a.icon{
+  float: right;
+  display: block;
+  }
+  }
+  @media screen and (max-width: 600px){
+
+  .topnav.responsive{
+  position: relative;
+  }
+
+  .topnav.responsive.icon{
+  position: absolute;
+  right: 5;
+  top: 0;
+  }
+
+  .topnav.responsive a{
+  float: none;
+  text-align: left;
+  display: block;
+  width: 100%;
+  position: relative;
+  }
+  }
+
+  }
+  </style>
+</head>
+<body>
+  <div class="topnav">
+   <a class="active" href="t.html">Home</a>
+   <a href="h.html">About Us</a>
+   <a href="a.html">Thailand</a>
+   <a href="i.html">Blogs</a>
+  </div>
+  <div class="slideshow-container">
+   <div class="mySlides">
+   <div class="numbertext">1/3</div>
+   <img src="img/thai1.jpg" style="width:100%">
+   <div class="text">Temple
+</div></div>
+   <div class="mySlides">
+   <div class="numbertext">2/3</div>
+   <img src="img/thai1.jpg" style="width:100%; height: auto;">
+   <div class="text">Temple
+</div></div>
+   <div class="mySlides">
+   <div class="numbertext">3/3</div>
+   <img src="img/thai1.jpg" style="width:100%">
+   <div class="text">Temple
+</div></div> 
+   <a class="prev" onclick="plusSlides(-1)">❮</a>
+   <a class="next" onclick="plusSlides(1)">❯</a></div>
+<br><br><br><br><br><br><br><br><br>
+ <div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+  <div class="header">
+   Thailand Diaries
+  </div>
+
+  
+  <script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n){
+showSlides(slideIndex += n);}
+
+function currentSlide(n) {
+showSlides(slideIndex = n);}
+
+function showSlides(n) {
+let i;
+let slides = document.getElementsByClassName("mySlides");
+let dots = document.getElementByClassName("dot");
+if (n < 1) {
+slideIndex = slides.length}
+for (i = 0; i < slides.length; i++) {
+slides [i].style.display = "none";
+}
+for (i = i < dots.length; i++) {
+dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</body>
+</html>
